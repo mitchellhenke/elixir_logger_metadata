@@ -9,7 +9,7 @@ defmodule LoggerTest.Translator do
   end
 
 
-  # ** Task ~p terminating~n** Started from ~p~n** When function  == ~p~n**      arguments == ~p~n** Reason for termination == ~n** ~p~n
+  # '** Task ~p terminating~n** Started from ~p~n** When function  == ~p~n**      arguments == ~p~n** Reason for termination == ~n** ~p~n'
   def add_metadata(:format, {_msg, [_pid, _pid2, _function, _args, {error, stacktrace}]}) do
     {:ok, [stacktrace: stacktrace, error: error]}
   end
